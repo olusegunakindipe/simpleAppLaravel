@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <a class="navbar-brand" href="#">Acme</a>
+  <a class="navbar-brand" href="{{route('home')}}">Acme</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item {{Request::is('/') ? 'active' : '' }}">
+        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+      <li class="nav-item {{Request::is('about') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('about')}}">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contact" >Contact</a>
+      <li class="nav-item {{Request::is('contact.create') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('contact.create')}}" >Contact</a>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0">
